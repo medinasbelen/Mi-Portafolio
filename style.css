@@ -413,3 +413,66 @@ ul {
         display: none;
     }
 }
+/* Estilos para los cuadros de Contacto y GitHub en la grilla */
+.action-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Fondo blanco para que resalte */
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.action-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.action-content i {
+    font-size: 45px;
+    color: var(--accent-color); /* El color turquesa que definimos antes */
+}
+
+.action-content span {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #262626;
+}
+
+/* Efectos al pasar el mouse */
+.action-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.contact-link:hover i {
+    color: #25D366; /* Color verde WhatsApp al hover */
+}
+
+.github-link:hover i {
+    color: #333; /* Color negro GitHub al hover */
+}
+/* Opción B: Forzar centrado manual */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* Esto centra todo automáticamente */
+}
+
+.project-item {
+    /* Calculamos el ancho para que sigan pareciendo 3 columnas: (100% / 3) - el gap */
+    width: calc(33.333% - 10px); 
+    aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        width: calc(33.333% - 2px); /* Más pegaditos en el celu */
+    }
+}

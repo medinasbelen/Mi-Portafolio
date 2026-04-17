@@ -1,0 +1,415 @@
+/* Reseteo y Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: #FAFAFA; /* Un gris muy claro, más suave que el blanco puro */
+    color: #262626;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Color de Acento Turquesa Suave */
+:root {
+    --accent-color: #2e3d3a;
+    --border-color: #DBDBDB;
+    --text-muted: #8E8E8E;
+}
+
+/* ============================ 
+   ESTILOS SIDEBAR (Menú Lateral) 
+   ============================ */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Fijo a la izquierda */
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.sidebar-logo {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-logo i {
+    color: var(--accent-color);
+}
+
+.sidebar-links li {
+    margin-bottom: 20px;
+}
+
+.sidebar-links a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+}
+
+.sidebar-links a:hover {
+    color: var(--accent-color);
+    background-color: rgba(26, 188, 156, 0.05); /* Efecto de fondo muy suave al hover */
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.sidebar-links i {
+    font-size: 20px;
+    width: 24px; /* Ancho fijo para alinear iconos */
+    text-align: center;
+}
+
+.sidebar-links a img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.badge {
+    background-color: #ed4956;
+    color: white;
+    font-size: 11px;
+    border-radius: 50%;
+    padding: 2px 5px;
+    margin-left: 5px;
+}
+
+.sidebar-more {
+    margin-top: auto; /* Empuja hacia abajo */
+    font-size: 16px;
+}
+
+/* =========================== 
+   ESTILOS CONTENIDO PRINCIPAL 
+   =========================== */
+.main-content {
+    margin-left: 250px; /* Ancho de la sidebar */
+    width: calc(100% - 250px);
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.container {
+    max-width: 935px;
+    width: 100%;
+}
+
+/* ========================= 
+   ENCABEZADO DE PERFIL PULIDO 
+   ========================= */
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0px 40px;
+}
+
+.profile-image-container {
+    flex: 0 0 150px;
+    margin-right: 80px;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 60%;
+    object-fit: cover;
+    border: 3px solid #EFEFEF; /* Borde suave alrededor de la foto */
+    padding: 3px;
+    background-color: white;
+}
+
+.username-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Para pantallas más chicas */
+}
+
+.username-row h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.btn-profile {
+    background-color: #EFEFEF; /* Fondo gris suave para botones */
+    color: #262626;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-profile:hover {
+    background-color: #DBDBDB;
+}
+
+.btn-profile.secondary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-profile.secondary:hover {
+    background-color: #17a085;
+}
+
+.checked-icon, .more-icon {
+    font-size: 22px;
+    color: #8E8E8E;
+    cursor: pointer;
+}
+
+.more-icon {
+    margin-left: 10px;
+}
+
+.stats {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.stats span {
+    margin-right: 40px;
+}
+
+.bio .name {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.bio .tagline {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.bio p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    max-width: 450px; /* Para que no sea tan ancho el texto */
+    line-height: 1.6;
+}
+
+.bio .link {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--accent-color);
+}
+
+.profile-separator {
+    border: 0.5px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+/* ============================== 
+   CUADRÍCULA DE PROYECTOS PREMIUM 
+   ============================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Más espacio entre fotos que IG para mayor limpieza visual */
+}
+
+.project-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px; /* Esquinas redondeadas suaves */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+    background-color: #FFFFFF;
+}
+
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Efecto zoom sutil al hover */
+}
+
+.project-item:hover img {
+    transform: scale(1.05); /* Zoom sutil */
+}
+
+/* El 'overlay' que aparece en el hover */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.overlay-stat {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.overlay-stat i {
+    font-size: 20px;
+}
+
+/* Panel de información que aparece en el hover *bajo* los stats */
+.project-info {
+    position: absolute;
+    bottom: -100px; /* Oculto inicialmente abajo */
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); /* Gradiente para legibilidad */
+    color: white;
+    text-align: center;
+    transition: bottom 0.4s;
+    pointer-events: none; /* No interactúa con el mouse */
+}
+
+.project-item:hover .project-info {
+    bottom: 0; /* Sube y aparece */
+}
+
+.project-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    font-size: 12px;
+    color: #DBDBDB;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   RESPONSIVIDAD (Modo Celular)
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* 1. Ocultamos la sidebar */
+    .sidebar {
+        display: none;
+    }
+
+    /* 2. El contenido ahora ocupa todo el ancho */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px 10px;
+    }
+
+    /* 3. Ajustamos el Header del Perfil */
+    .profile-header {
+        flex-direction: column; /* La foto arriba, el texto abajo */
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .profile-image-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .username-row {
+        justify-content: center;
+    }
+
+    .username-row h1 {
+        font-size: 22px;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 10px 0;
+    }
+
+    .stats span {
+        margin-right: 0;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column; /* Número arriba, palabra abajo como en la App */
+    }
+
+    .bio p {
+        max-width: 100%;
+    }
+
+    /* 4. Ajustamos la cuadrícula de proyectos */
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr); /* Mantenemos 3, pero con menos espacio */
+        gap: 3px;
+    }
+
+    .project-item {
+        border-radius: 0; /* En móviles de IG las fotos no suelen tener bordes redondeados */
+    }
+
+    /* Opcional: Ocultar los textos en hover para móviles, 
+       ya que en celular no hay "mouse" */
+    .project-info {
+        display: none;
+    }
+}
